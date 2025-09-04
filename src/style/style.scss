@@ -1,0 +1,12 @@
+@use "util";
+@use "widget/Bar";
+@use "widget/Notifications";
+@use "widget/Launcher";
+
+* {
+  all: unset;
+}
+
+window>box {
+  margin: var(--cfg-outsideGap);
+}

@@ -1,0 +1,20 @@
+.box {
+  background: var(--cfg-background);
+  border-radius: var(--cfg-borderRadius-small);
+  padding: var(--cfg-padding);
+
+  font-family: var(--cfg-font-normal);
+  font-weight: var(--cfg-font-normalWeight);
+  font-size: var(--cfg-font-size);
+  color: var(--cfg-foreground);
+
+  &.error {
+    background: #e56;
+    color: var(--cfg-background);
+  }
+}
+
+.bold {
+  font-family: var(--cfg-font-bold), var(--cfg-font-normal);
+  font-weight: var(--cfg-font-boldWeight, bold);
+}

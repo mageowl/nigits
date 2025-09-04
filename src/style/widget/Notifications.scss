@@ -1,0 +1,26 @@
+window.Notifications box.Notification {
+  border: var(--cfg-notifications-border);
+
+  image {
+    min-width: 72px;
+    min-height: 72px;
+    -gtk-icon-size: 72px;
+  }
+
+  box.actions {
+    margin: 15px -4px 2px;
+
+    button {
+      background: var(--cfg-notifications-actionBackground);
+      border-radius: var(--cfg-borderRadius-tiny);
+      padding: var(--cfg-paddingInner);
+      min-width: 40px;
+
+      &.primary {
+        background: var(--cfg-notifications-primaryActionBackground);
+        color: var(--cfg-background);
+        font-weight: bold;
+      }
+    }
+  }
+}

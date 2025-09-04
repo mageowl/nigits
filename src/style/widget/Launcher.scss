@@ -1,0 +1,27 @@
+window.Launcher>box {
+  padding: var(--cfg-launcher-padding);
+  margin: 0;
+
+  border: var(--cfg-launcher-border);
+
+  font-size: 24px;
+
+  label.input {
+    border-right: 2px solid var(--cfg-foreground);
+  }
+
+  label.prefix {
+    min-width: 60px;
+    font-weight: bold;
+    color: var(--cfg-launcher-prefixColor);
+  }
+
+  separator {
+    border-bottom: var(--cfg-launcher-border);
+  }
+
+  label.error {
+    color: red;
+    margin: auto;
+  }
+}

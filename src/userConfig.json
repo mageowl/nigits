@@ -1,0 +1,61 @@
+{
+  "iconPath": "/home/owl/github/nigits/icons/",
+  "theme": {
+    "background": "#0B0614",
+    "foreground": "#DDD3F5",
+    "font": {
+      "normal": "Gaegu",
+      "bold": "Sniglet",
+      "boldWeight": "normal",
+      "size": "20px"
+    },
+    "borderRadius": {
+      "tiny": "6px",
+      "small": "8px",
+      "large": "20px"
+    },
+    "outsideGap": "8px",
+    "padding": "6px 14px",
+    "paddingInner": "4px 6px",
+    "bar": {
+      "background": "transparent",
+      "padding": "0",
+      "iconSpacing": "6px",
+      "spacing": "8px"
+    },
+    "notifications": {
+      "border": "2px solid #3F2C5E",
+      "actionBackground": "#3F2C5E",
+      "primaryActionBackground": "#D77BBA"
+    },
+    "launcher": {
+      "border": "2px solid #3F2C5E",
+      "padding": "16px",
+      "prefixColor": "#B681CA"
+    }
+  },
+  "bar": {
+    "valign": "top",
+    "leftWidgets": [],
+    "centerWidgets": [
+      "time",
+      "music",
+      "volume"
+    ],
+    "rightWidgets": [
+      "battery"
+    ]
+  },
+  "notifications": {
+    "valign": "top",
+    "halign": "right",
+    "spacing": 10,
+    "actionSpacing": 8
+  },
+  "launcher": {
+    "maxResults": 6,
+    "placeholder": "do something...",
+    "width": 400,
+    "height": 200
+  }
+}

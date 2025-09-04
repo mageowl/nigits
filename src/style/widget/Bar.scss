@@ -1,0 +1,28 @@
+window.Bar {
+  >box {
+    background: var(--cfg-bar-background);
+    padding: var(--cfg-bar-padding);
+
+    box.BarWidget {
+      image {
+        padding-right: var(--cfg-bar-iconSpacing);
+      }
+
+      &.Music.paused image {
+        opacity: 0.2;
+      }
+    }
+
+    box:not(:last-child):not(.empty) {
+      margin-right: var(--cfg-bar-spacing);
+    }
+  }
+
+  &.top>box {
+    margin-bottom: 0;
+  }
+
+  &.bottom>box {
+    margin-top: 0;
+  }
+}
