@@ -34,7 +34,7 @@ pkgs.stdenv.mkDerivation {
   preFixup = ''
     gappsWrapperArgs+=(
       --prefix PATH : ${pkgs.lib.makeBinPath [
-      "${inputs.superspace}/bin/superspace"
+      "${inputs.superspace}/bin"
     ]}
     )
   '';
