@@ -5,7 +5,7 @@ import style from "./style/style.scss";
 import Bar from "./widget/bar/Bar";
 import { config, cssVariables } from "./config";
 import Notifications from "./widget/Notifications";
-import Launcher from "./widget/Launcher";
+import Launcher, { launcherWindow } from "./widget/Launcher";
 
 app.start({
   css: style + cssVariables,
@@ -22,5 +22,16 @@ app.start({
     if (config.launcher != null) {
       <Launcher config={config.launcher}/>;
     }
+  },
+
+  requestHandler([command, args]: string[], res) {
+      switch (command) {
+        case "launcher":
+          launcherWindow.show();
+          res("ok");
+          break;
+        default:
+          res("unknown command: " + command);
+      }
   },
 });

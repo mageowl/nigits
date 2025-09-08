@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  userConfig ? null,
 }:
 pkgs.stdenv.mkDerivation {
   pname = "nigits";
@@ -26,6 +27,13 @@ pkgs.stdenv.mkDerivation {
     inputs.astal.wireplumber
   ];
 
+  patchPhase =
+    if userConfig != null
+    then ''
+      cp ${userConfig} ./userConfig.json
+    ''
+    else "";
+
   installPhase = ''
     mkdir -p $out/bin
     ags bundle app.tsx $out/bin/nigits
@@ -34,7 +42,7 @@ pkgs.stdenv.mkDerivation {
   preFixup = ''
     gappsWrapperArgs+=(
       --prefix PATH : ${pkgs.lib.makeBinPath [
-      "${inputs.superspace}/bin"
+      inputs.superspace
     ]}
     )
   '';
