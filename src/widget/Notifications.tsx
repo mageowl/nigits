@@ -44,11 +44,19 @@ const notifd = AstalNotifd.get_default();
 // const notifs = new NotificationMap();
 
 function Notification({ value, config }: { value: AstalNotifd.Notification, config: NotificationsConfig }) {
+  let clickedAction: string | null = null;
+  function callback() {
+    if (clickedAction != null) value.invoke(clickedAction);
+    value.dismiss();
+  }
+
   return <box class="Notification box" spacing={config.spacing}>
     {value.image ?
       <image file={value.image} />
       : value.appIcon && <image icon_name={value.appIcon} />}
     <box orientation={Gtk.Orientation.VERTICAL}>
+      <Gtk.GestureClick onPressed={() => setTimeout(callback, 150)} />
+
       <label class="bold" label={createBinding(value, "summary")} xalign={0} />
       <label label={createBinding(value, "body")} xalign={0} />
       <box class="actions" spacing={config.actionSpacing} hexpand={true}>
@@ -60,8 +68,7 @@ function Notification({ value, config }: { value: AstalNotifd.Notification, conf
               label={action.label}
               hexpand={primary}
               onClicked={() => {
-                value.invoke(action.id);
-                value.dismiss();
+                clickedAction = action.id;
               }}
             />;
           }}
